@@ -1,6 +1,4 @@
 public class Shop {
-    /// import crops
-    /// import animal
     /// int animalBought => (stock = +1 animal)
     /// int animalProductSold => (stock = -1 animal_product)
     /// int animalSold => (stock = -1 animal)
@@ -11,24 +9,30 @@ public class Shop {
     private int animalBought;
     private int animalProductSold;
     private int animalSold;
+    private int animalStock;
+    private int animalProductStock
 
     private String cropsName;
     private int cropsPrice;
     private int cropsBought;
     private int cropsSold;
+    private int cropsStock;
 
-    public Shop(String animalName, int animalPrice, int animalBought, int animalProductSold, int animalSold,
-                String cropsName, int cropsPrice,  int cropsBought, int cropsSold) {
+    public Shop(String animalName, int animalPrice, int animalBought, int animalProductSold, int animalSold, int animalStock, int animalProductStock,
+                String cropsName, int cropsPrice,  int cropsBought, int cropsSold, int cropsStock) {
         this.animalName = animalName;
         this.animalPrice = animalPrice;
         this.animalBought = animalBought;
         this.animalProductSold = animalProductSold;
         this.animalSold = animalSold;
+        this.animalStock = animalStock;
+        this.animalProductStock = animalProductStock;
 
         this.cropsName = cropsName;
         this.cropsPrice = cropsPrice;
         this.cropsBought = cropsBought;
         this.cropsSold = cropsSold;
+        this.cropsStock = cropsStock;
     }
 
     public String setAnimalName(String animalName) {
@@ -66,6 +70,13 @@ public class Shop {
         return animalSold;
     }
 
+    public String setAnimalStock(int animalStock) {
+        this.animalStock = animalStock;
+    }
+    public int getAnimalStock() {
+        return animalStock;
+    }
+
     public String setCropsName(String cropsName) {
         this.cropsName = cropsName;
     }
@@ -92,5 +103,30 @@ public class Shop {
     }
     public int getCropsSold() {
         return cropsSold;
+    }
+
+    public int setCropsStock(int cropsStock) {
+        this.cropsStock = cropsStock;
+    }
+
+    public class Bought{
+        if (animalBought++) {
+            animalStock++;
+        }
+        if (cropsBought++){
+            cropsSold++;
+        }
+    }
+
+    public class Sold{
+        if (cropsSold ++){
+            cropsStock--;
+        }
+        if (animalProductSold++){
+            animalProductSold--;
+        }
+        if (animalSold++){
+            animalStock--;
+        }
     }
 }

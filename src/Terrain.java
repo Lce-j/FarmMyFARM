@@ -2,10 +2,13 @@ public class Terrain {
     /// import crops
     /// import animal
 
-    /// int nb_crops_terrain = 1
-    /// int nb_animal_terrain = 1
-    /// int parcel (vide/occupé)
+    int nb_crops_terrain = 1;
+    int nb_animal_terrain = 1;
+    int parcel = 0;
 
+    public Terrain() {
+        if (parcel == 0) {}
+    }
     /// Si terrain vide, on click =>
     /// - choose between animal or crops
         /// Si chose animal => le quel then animal_stage_growth = 0
